@@ -1,0 +1,78 @@
+{
+  "builtAt": "2026-10-25T12:42:03.797Z",
+  "embedWindow": 512,
+  "rows": [
+    {
+      "chunker": "section",
+      "chunks": 1959,
+      "provisions": 1959,
+      "tokensMedian": 202,
+      "tokensP90": 472,
+      "tokensMax": 2185,
+      "overWindow": 144,
+      "totalTokens": 478771,
+      "chunkMs": 491,
+      "bm25Ms": 286
+    },
+    {
+      "chunker": "subsection",
+      "chunks": 7319,
+      "provisions": 1959,
+      "tokensMedian": 51,
+      "tokensP90": 113,
+      "tokensMax": 2095,
+      "overWindow": 14,
+      "totalTokens": 467239,
+      "chunkMs": 474,
+      "bm25Ms": 229
+    },
+    {
+      "chunker": "subsection-context",
+      "chunks": 7319,
+      "provisions": 1959,
+      "tokensMedian": 79,
+      "tokensP90": 142,
+      "tokensMax": 2109,
+      "overWindow": 14,
+      "totalTokens": 668389,
+      "chunkMs": 654,
+      "bm25Ms": 343
+    },
+    {
+      "chunker": "fixed-256",
+      "chunks": 2139,
+      "provisions": 1393,
+      "tokensMedian": 256,
+      "tokensP90": 256,
+      "tokensMax": 256,
+      "overWindow": 0,
+      "totalTokens": 546814,
+      "chunkMs": 656,
+      "bm25Ms": 264
+    },
+    {
+      "chunker": "fixed-512",
+      "chunks": 1065,
+      "provisions": 927,
+      "tokensMedian": 512,
+      "tokensP90": 512,
+      "tokensMax": 512,
+      "overWindow": 0,
+      "totalTokens": 544715,
+      "chunkMs": 587,
+      "bm25Ms": 251
+    },
+    {
+      "chunker": "section-split",
+      "chunks": 2137,
+      "provisions": 1959,
+      "tokensMedian": 217,
+      "tokensP90": 455,
+      "tokensMax": 2109,
+      "overWindow": 14,
+      "totalTokens": 515081,
+      "chunkMs": 1288,
+      "bm25Ms": 253
+    }
+  ]
+}

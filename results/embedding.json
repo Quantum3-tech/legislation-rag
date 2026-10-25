@@ -1,0 +1,60 @@
+{
+  "machine": "12th Gen Intel(R) Core(TM) i5-12600K x16",
+  "node": "v24.15.0",
+  "rows": [
+    {
+      "chunker": "section",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 1959,
+      "tokensEmbedded": 447063,
+      "ms": 170294,
+      "chunksPerSec": 11.5,
+      "tokensPerSec": 2625
+    },
+    {
+      "chunker": "subsection",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 7319,
+      "tokensEmbedded": 461624,
+      "ms": 176133,
+      "chunksPerSec": 41.6,
+      "tokensPerSec": 2621
+    },
+    {
+      "chunker": "subsection-context",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 7319,
+      "tokensEmbedded": 662490,
+      "ms": 88484,
+      "chunksPerSec": 82.7,
+      "tokensPerSec": 7487
+    },
+    {
+      "chunker": "fixed-256",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 2139,
+      "tokensEmbedded": 546814,
+      "ms": 67297,
+      "chunksPerSec": 31.8,
+      "tokensPerSec": 8125
+    },
+    {
+      "chunker": "fixed-512",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 1065,
+      "tokensEmbedded": 544715,
+      "ms": 85311,
+      "chunksPerSec": 12.5,
+      "tokensPerSec": 6385
+    },
+    {
+      "chunker": "section-split",
+      "model": "Xenova/bge-small-en-v1.5",
+      "chunks": 2137,
+      "tokensEmbedded": 509182,
+      "ms": 76561,
+      "chunksPerSec": 27.9,
+      "tokensPerSec": 6651
+    }
+  ]
+}

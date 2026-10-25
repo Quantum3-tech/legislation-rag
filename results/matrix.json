@@ -1,0 +1,1172 @@
+{
+ "machine": "12th Gen Intel(R) Core(TM) i5-12600K x16, node v24.15.0",
+ "questions": 60,
+ "answerable": 50,
+ "unanswerable": 10,
+ "runs": [
+  {
+   "file": "results/runs/section__bm25__rerank-0.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.7005130720983859,
+   "recall10": 0.799952380952381,
+   "mrr10": 0.7353333333333332,
+   "tokens10Median": 3147
+  },
+  {
+   "file": "results/runs/section__bm25__rerank-20.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8070690763256476,
+   "recall10": 0.8362857142857143,
+   "mrr10": 0.8766666666666667,
+   "tokens10Median": 3253
+  },
+  {
+   "file": "results/runs/section__bm25__rerank-50.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8306908115401188,
+   "recall10": 0.8501428571428571,
+   "mrr10": 0.915,
+   "tokens10Median": 3172
+  },
+  {
+   "file": "results/runs/section__dense__rerank-0.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.8071928832301445,
+   "recall10": 0.8651428571428571,
+   "mrr10": 0.8755238095238096,
+   "tokens10Median": 2797
+  },
+  {
+   "file": "results/runs/section__dense__rerank-20.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8337730833335131,
+   "recall10": 0.8601428571428571,
+   "mrr10": 0.915,
+   "tokens10Median": 2889
+  },
+  {
+   "file": "results/runs/section__dense__rerank-50.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8376601558428853,
+   "recall10": 0.8701428571428571,
+   "mrr10": 0.915,
+   "tokens10Median": 2961
+  },
+  {
+   "file": "results/runs/section__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.8015470941986556,
+   "recall10": 0.8634761904761903,
+   "mrr10": 0.8448888888888889,
+   "tokens10Median": 3001
+  },
+  {
+   "file": "results/runs/section__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8370279035999845,
+   "recall10": 0.8674761904761904,
+   "mrr10": 0.915,
+   "tokens10Median": 3042
+  },
+  {
+   "file": "results/runs/section__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8324868430796996,
+   "recall10": 0.8568095238095236,
+   "mrr10": 0.915,
+   "tokens10Median": 3015
+  },
+  {
+   "file": "results/runs/section__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.8223268640505293,
+   "recall10": 0.8508095238095238,
+   "mrr10": 0.889,
+   "tokens10Median": 2930
+  },
+  {
+   "file": "results/runs/section__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8320192119277369,
+   "recall10": 0.8541428571428571,
+   "mrr10": 0.915,
+   "tokens10Median": 3054
+  },
+  {
+   "file": "results/runs/section__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "section",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8324868430796996,
+   "recall10": 0.8568095238095236,
+   "mrr10": 0.915,
+   "tokens10Median": 3049
+  },
+  {
+   "file": "results/runs/subsection__bm25__rerank-0.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.6351779200887573,
+   "recall10": 0.7514285714285713,
+   "mrr10": 0.6640238095238096,
+   "tokens10Median": 802
+  },
+  {
+   "file": "results/runs/subsection__bm25__rerank-20.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7110162243532748,
+   "recall10": 0.783095238095238,
+   "mrr10": 0.7828571428571428,
+   "tokens10Median": 850
+  },
+  {
+   "file": "results/runs/subsection__bm25__rerank-50.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7033444986778796,
+   "recall10": 0.7929523809523809,
+   "mrr10": 0.775547619047619,
+   "tokens10Median": 883
+  },
+  {
+   "file": "results/runs/subsection__dense__rerank-0.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.7134492314581216,
+   "recall10": 0.7817619047619047,
+   "mrr10": 0.8035555555555556,
+   "tokens10Median": 880
+  },
+  {
+   "file": "results/runs/subsection__dense__rerank-20.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.728553464553359,
+   "recall10": 0.8284285714285714,
+   "mrr10": 0.7957142857142857,
+   "tokens10Median": 856
+  },
+  {
+   "file": "results/runs/subsection__dense__rerank-50.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7141266205792951,
+   "recall10": 0.8034285714285714,
+   "mrr10": 0.787079365079365,
+   "tokens10Median": 885
+  },
+  {
+   "file": "results/runs/subsection__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.7459349022970779,
+   "recall10": 0.7934285714285714,
+   "mrr10": 0.8415,
+   "tokens10Median": 873
+  },
+  {
+   "file": "results/runs/subsection__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7161829222733913,
+   "recall10": 0.8079523809523809,
+   "mrr10": 0.7928809523809524,
+   "tokens10Median": 898
+  },
+  {
+   "file": "results/runs/subsection__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7144256883373482,
+   "recall10": 0.8012857142857144,
+   "mrr10": 0.7867222222222222,
+   "tokens10Median": 903
+  },
+  {
+   "file": "results/runs/subsection__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.7410871837049078,
+   "recall10": 0.8107619047619048,
+   "mrr10": 0.8088888888888889,
+   "tokens10Median": 864
+  },
+  {
+   "file": "results/runs/subsection__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7230013060819077,
+   "recall10": 0.8224285714285713,
+   "mrr10": 0.7931666666666666,
+   "tokens10Median": 920
+  },
+  {
+   "file": "results/runs/subsection__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "subsection",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.7144256883373482,
+   "recall10": 0.8012857142857144,
+   "mrr10": 0.7867222222222222,
+   "tokens10Median": 903
+  },
+  {
+   "file": "results/runs/subsection-context__bm25__rerank-0.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.7530743107120937,
+   "recall10": 0.8499523809523809,
+   "mrr10": 0.7739999999999999,
+   "tokens10Median": 1595
+  },
+  {
+   "file": "results/runs/subsection-context__bm25__rerank-20.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8335363071792591,
+   "recall10": 0.8616190476190475,
+   "mrr10": 0.914,
+   "tokens10Median": 1621
+  },
+  {
+   "file": "results/runs/subsection-context__bm25__rerank-50.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8459035554460211,
+   "recall10": 0.8753333333333333,
+   "mrr10": 0.9100000000000001,
+   "tokens10Median": 1688
+  },
+  {
+   "file": "results/runs/subsection-context__dense__rerank-0.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.838446999108259,
+   "recall10": 0.8754761904761905,
+   "mrr10": 0.9006666666666667,
+   "tokens10Median": 1833
+  },
+  {
+   "file": "results/runs/subsection-context__dense__rerank-20.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.846442362364365,
+   "recall10": 0.8721428571428571,
+   "mrr10": 0.9123333333333332,
+   "tokens10Median": 1852
+  },
+  {
+   "file": "results/runs/subsection-context__dense__rerank-50.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8501370720311052,
+   "recall10": 0.8894761904761905,
+   "mrr10": 0.9066666666666667,
+   "tokens10Median": 1919
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.841072581754137,
+   "recall10": 0.8828095238095238,
+   "mrr10": 0.8916666666666667,
+   "tokens10Median": 1843
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8553323695729825,
+   "recall10": 0.8834761904761905,
+   "mrr10": 0.9206666666666667,
+   "tokens10Median": 1632
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.845204716930664,
+   "recall10": 0.8846666666666668,
+   "mrr10": 0.9033333333333333,
+   "tokens10Median": 1768
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.85625411139784,
+   "recall10": 0.8851428571428572,
+   "mrr10": 0.9016666666666667,
+   "tokens10Median": 1800
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.853333485409037,
+   "recall10": 0.8818095238095239,
+   "mrr10": 0.9173333333333333,
+   "tokens10Median": 1783
+  },
+  {
+   "file": "results/runs/subsection-context__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "subsection-context",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8464767785521687,
+   "recall10": 0.8884761904761905,
+   "mrr10": 0.9033333333333333,
+   "tokens10Median": 1871
+  },
+  {
+   "file": "results/runs/fixed-256__bm25__rerank-0.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.6260965438314037,
+   "recall10": 0.7526190476190477,
+   "mrr10": 0.6365238095238095,
+   "tokens10Median": 2814
+  },
+  {
+   "file": "results/runs/fixed-256__bm25__rerank-20.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.680574806340324,
+   "recall10": 0.7582857142857145,
+   "mrr10": 0.7070000000000001,
+   "tokens10Median": 2811
+  },
+  {
+   "file": "results/runs/fixed-256__bm25__rerank-50.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6647543666043556,
+   "recall10": 0.7554285714285716,
+   "mrr10": 0.6735555555555556,
+   "tokens10Median": 2811
+  },
+  {
+   "file": "results/runs/fixed-256__dense__rerank-0.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.5875416046761547,
+   "recall10": 0.6679523809523811,
+   "mrr10": 0.6298888888888888,
+   "tokens10Median": 2560
+  },
+  {
+   "file": "results/runs/fixed-256__dense__rerank-20.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6756538479324853,
+   "recall10": 0.7436190476190476,
+   "mrr10": 0.7090000000000001,
+   "tokens10Median": 2560
+  },
+  {
+   "file": "results/runs/fixed-256__dense__rerank-50.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6712661157911672,
+   "recall10": 0.7535714285714286,
+   "mrr10": 0.6913333333333334,
+   "tokens10Median": 2560
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.67184541801049,
+   "recall10": 0.7514285714285716,
+   "mrr10": 0.7162698412698414,
+   "tokens10Median": 2812
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6651589191091264,
+   "recall10": 0.7514285714285716,
+   "mrr10": 0.6805,
+   "tokens10Median": 2812
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6746246180394729,
+   "recall10": 0.7654285714285716,
+   "mrr10": 0.6888333333333333,
+   "tokens10Median": 2809
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.6632488649524001,
+   "recall10": 0.7464285714285716,
+   "mrr10": 0.7125238095238094,
+   "tokens10Median": 2813
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6701779035287246,
+   "recall10": 0.7564285714285716,
+   "mrr10": 0.6875238095238094,
+   "tokens10Median": 2813
+  },
+  {
+   "file": "results/runs/fixed-256__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "fixed-256",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.6746172156321601,
+   "recall10": 0.7654285714285716,
+   "mrr10": 0.6885555555555556,
+   "tokens10Median": 2560
+  },
+  {
+   "file": "results/runs/fixed-512__bm25__rerank-0.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.39811581505032345,
+   "recall10": 0.5067619047619047,
+   "mrr10": 0.4154126984126984,
+   "tokens10Median": 5118
+  },
+  {
+   "file": "results/runs/fixed-512__bm25__rerank-20.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.3947211301781306,
+   "recall10": 0.5142857142857143,
+   "mrr10": 0.4549999999999999,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__bm25__rerank-50.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.4100902756079829,
+   "recall10": 0.5398095238095239,
+   "mrr10": 0.4594126984126984,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__dense__rerank-0.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.3930680044425845,
+   "recall10": 0.46676190476190477,
+   "mrr10": 0.48752380952380947,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__dense__rerank-20.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.41107636313379076,
+   "recall10": 0.5119523809523809,
+   "mrr10": 0.46885714285714286,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__dense__rerank-50.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.4062315959890709,
+   "recall10": 0.5048095238095238,
+   "mrr10": 0.4633809523809523,
+   "tokens10Median": 5120
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.4654238348813742,
+   "recall10": 0.5469523809523811,
+   "mrr10": 0.5365555555555556,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.40412320795391615,
+   "recall10": 0.5198095238095238,
+   "mrr10": 0.45738095238095233,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.4091920031035727,
+   "recall10": 0.5398095238095239,
+   "mrr10": 0.45919047619047615,
+   "tokens10Median": 5120
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.4524295240403427,
+   "recall10": 0.5274285714285715,
+   "mrr10": 0.5218333333333333,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.4036133123572715,
+   "recall10": 0.5198095238095238,
+   "mrr10": 0.4570238095238095,
+   "tokens10Median": 5119
+  },
+  {
+   "file": "results/runs/fixed-512__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "fixed-512",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.4021820162264692,
+   "recall10": 0.5198095238095238,
+   "mrr10": 0.45607936507936503,
+   "tokens10Median": 5120
+  },
+  {
+   "file": "results/runs/section-split__bm25__rerank-0.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.7052816058583541,
+   "recall10": 0.8070952380952382,
+   "mrr10": 0.7279999999999999,
+   "tokens10Median": 3207
+  },
+  {
+   "file": "results/runs/section-split__bm25__rerank-20.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8192419715877441,
+   "recall10": 0.8333809523809523,
+   "mrr10": 0.8858333333333333,
+   "tokens10Median": 3163
+  },
+  {
+   "file": "results/runs/section-split__bm25__rerank-50.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "bm25",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8438687693050434,
+   "recall10": 0.8543809523809521,
+   "mrr10": 0.9055555555555554,
+   "tokens10Median": 3117
+  },
+  {
+   "file": "results/runs/section-split__dense__rerank-0.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5"
+   },
+   "n": 50,
+   "ndcg10": 0.8425259826750378,
+   "recall10": 0.8722857142857143,
+   "mrr10": 0.9136666666666667,
+   "tokens10Median": 2963
+  },
+  {
+   "file": "results/runs/section-split__dense__rerank-20.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8581742017313458,
+   "recall10": 0.8749047619047619,
+   "mrr10": 0.9061904761904762,
+   "tokens10Median": 3032
+  },
+  {
+   "file": "results/runs/section-split__dense__rerank-50.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "dense",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8542354108744707,
+   "recall10": 0.8682380952380953,
+   "mrr10": 0.9058333333333333,
+   "tokens10Median": 2990
+  },
+  {
+   "file": "results/runs/section-split__hybrid-rrf__rerank-0.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60"
+   },
+   "n": 50,
+   "ndcg10": 0.8537790330668865,
+   "recall10": 0.8684285714285714,
+   "mrr10": 0.9283333333333332,
+   "tokens10Median": 2997
+  },
+  {
+   "file": "results/runs/section-split__hybrid-rrf__rerank-20.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8496125751459479,
+   "recall10": 0.863904761904762,
+   "mrr10": 0.9061904761904762,
+   "tokens10Median": 3081
+  },
+  {
+   "file": "results/runs/section-split__hybrid-rrf__rerank-50.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "rrf-60",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8533204313981241,
+   "recall10": 0.8693809523809523,
+   "mrr10": 0.9055555555555554,
+   "tokens10Median": 3014
+  },
+  {
+   "file": "results/runs/section-split__hybrid-minmax__rerank-0.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5"
+   },
+   "n": 50,
+   "ndcg10": 0.8465877864591242,
+   "recall10": 0.8662857142857142,
+   "mrr10": 0.9066666666666667,
+   "tokens10Median": 3011
+  },
+  {
+   "file": "results/runs/section-split__hybrid-minmax__rerank-20.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 20
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8501360495171781,
+   "recall10": 0.8632380952380952,
+   "mrr10": 0.9061904761904762,
+   "tokens10Median": 3104
+  },
+  {
+   "file": "results/runs/section-split__hybrid-minmax__rerank-50.json",
+   "config": {
+    "chunker": "section-split",
+    "retriever": "hybrid",
+    "embedder": "Xenova/bge-small-en-v1.5",
+    "fusion": "minmax-0.5",
+    "rerank": {
+     "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+     "depth": 50
+    }
+   },
+   "n": 50,
+   "ndcg10": 0.8534345882631813,
+   "recall10": 0.8693809523809523,
+   "mrr10": 0.9055555555555554,
+   "tokens10Median": 3031
+  }
+ ]
+}

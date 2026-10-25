@@ -104,3 +104,40 @@ repeat a provision already seen. A reader reads them too.
 Rejected: summing the tokens of the k distinct provisions' first chunks
 only, which would hide the cost of subsection chunkers returning five
 pieces of the same section.
+
+## D12. The predictions stand as written (25 October 2026, after the run)
+
+Decided: DESIGN.md is not edited after the results. Table 8 in the README
+marks each prediction held or broken with the numbers. Four of six were
+broken, including the central one that BM25 would beat dense retrieval.
+Rejected: rewriting the predictions to match, or softening them. The
+value of the predictions is that they were fixed before the run.
+
+## D13. Recommended configurations come from the table, not the design (25 October 2026)
+
+Decided: two recommendations, both read off Tables 1 to 3. For quality
+per token, `subsection-context` with hybrid RRF and rerank@20 (0.855
+nDCG@10, 1,632 tokens at k=10). For latency, `section-split` with dense
+retrieval alone (0.843, about 1 ms per query). The hybrid stage is not
+recommended on its own: on no chunker could I show it beating dense alone
+within the bootstrap intervals.
+Rejected: recommending the design's predicted winner (`section-split`
+with hybrid RRF) just because it was predicted. It is within noise of
+the two above and costs more tokens than the first.
+
+## D14. Fusion verdict is "not shown", not "RRF wins" (25 October 2026)
+
+Decided: the README says RRF lost to untuned min-max on every chunker
+where both were run and that the gap is inside the intervals. D9 chose
+RRF to avoid tuning a weight on the evaluation set; that reasoning still
+holds, and the measurement says the choice did not matter at n=50.
+Rejected: tuning alpha now that the numbers are in. That would be fitting
+to the 50 questions, which is what D9 was written to prevent.
+
+## D15. Fixed-window coverage is reported as a result, not fixed (25 October 2026)
+
+Decided: `fixed-512` scored 0.465 nDCG@10 because 1,032 provisions never
+dominate a window. The README states the mechanism and the number. The
+alternative credit rule (every provision a window touches) is listed as
+future work rather than run, because it would change the metric for one
+chunker only and the comparison would stop being like for like.
