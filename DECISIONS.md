@@ -168,8 +168,14 @@ anything that the tables do not describe their file. When I re-fetched
 the file an hour after the original download to restore my local copy,
 the hash matched, which is the first use of the check.
 
-Rejected: committing a transformed copy with the identifiers stripped (the
-raw file is the source of truth and a transformed copy is not the thing
-the parser was written against), and committing `data/corpus.json`, the
-parsed output, in its place (it is derived, 4 MB, and would invite
-treating the parser as untestable).
+Rejected: committing a transformed copy of the XML with the identifiers
+stripped. The raw file is the source of truth and a transformed copy is
+not the thing the parser was written against.
+
+Kept: `data/corpus.json`, the parser's output (5 MB), has been committed
+since the build and stays. It is derived, so it is not the source of
+truth, but it lets a reader inspect the exact live text the matrix ran
+over without a network fetch, and it carries no effect identifiers so it
+passes push protection. `npm run parse` regenerates it from the raw file
+and the tests check the parser against the raw file, not against this
+copy.
