@@ -14,6 +14,26 @@ generated from `results/` by `npm run report`. The baseline is BM25 over
 whole sections, no dense retrieval, no reranking. n is 50 answerable
 questions throughout unless a table says otherwise.
 
+**Only 22 of the 50 questions discriminate between configurations.** On
+the 28 single-section questions, every retriever on section chunks
+reaches recall@10 of 1.000 (Table 5), so those questions cannot separate
+anything above the baseline. Every comparison below is in effect decided
+by the 22 multi-section questions, and that is why the bootstrap
+intervals on the deltas run to about plus or minus 0.07. Where I say a
+difference was not shown, read it as "this question set cannot separate
+them", which is a weaker claim than "there is no difference". The two are
+not the same and I can only make the first.
+
+**Subsections with their heading carried down give nearly the same
+quality for 61% of the tokens.** `subsection-context` under hybrid RRF
+scored 0.841 nDCG@10 while a reader takes in 1,843 tokens to see 10
+provisions; `section-split` scored 0.854 at 2,997 tokens. With rerank@20
+the figures are 0.855 at 1,632 tokens against 0.850 at 3,081. The
+quality gap is inside the interval; the token gap is not a matter of
+sampling. If the retrieved text is going into a prompt, this is the
+result that matters, and it is only visible because every configuration
+reports token volume alongside recall.
+
 **Four of my six predictions were wrong.** They are listed with the
 numbers in Table 8. The two that held were the smaller ones: a bare
 subsection without its heading loses more than 0.10 nDCG@10 under dense
@@ -35,9 +55,13 @@ method I rejected.** Hybrid RRF on sections scored 0.802 against dense's
 0.807. The untuned min-max weighted sum scored 0.822. On subsection
 chunks with context, min-max scored 0.856 against RRF's 0.841. None of
 these gaps is outside the bootstrap intervals, which run about plus or
-minus 0.07 around every delta in Table 1, so the honest statement is
-that with 50 questions I cannot show hybrid retrieval doing anything that
-dense retrieval does not, and I cannot show RRF being the better fusion.
+minus 0.07 around every delta in Table 1. This comparison is
+under-powered: with 22 discriminating questions the smallest difference
+it could detect is larger than the differences observed. So the honest
+statement is that this question set cannot separate hybrid retrieval
+from dense retrieval, or RRF from min-max, not that there is no
+difference between them. A set with more multi-section questions might
+show one; this one does not.
 
 **Chunking mattered more than anything else.** Splitting long sections at
 subsection boundaries and carrying the Part, Chapter and heading down
@@ -55,9 +79,17 @@ dominate a window, so 1,032 provisions cannot be retrieved at all.
 it was strong.** On whole sections with hybrid RRF, reranking the top 20
 raised nDCG@10 from 0.802 to 0.837 and MRR@10 from 0.845 to 0.915 while
 recall@10 moved by 0.004. On the best chunker it changed nothing (0.854,
-0.850, 0.853 at depths 0, 20 and 50). On bare subsections it made things
-worse (0.746 to 0.716). It also made the first-stage choice matter less:
-BM25 plus rerank@50 reached 0.831 against dense plus rerank@50 at 0.838.
+0.850, 0.853 at depths 0, 20 and 50). It also made the first-stage
+choice matter less: BM25 plus rerank@50 reached 0.831 against dense plus
+rerank@50 at 0.838.
+
+**Reranking made bare subsections worse**, from 0.746 to 0.716 at depth
+20 and 0.714 at depth 50 (Table 3). The cross-encoder was trained on web
+passages and a subsection stripped of its heading reads as "(2) This
+section does not apply where..." with nothing to say what "this section"
+is. Given no context, the reranker promoted the wrong fragments with
+confidence. Context carried down fixes it: the same reranker on
+`subsection-context` went from 0.841 to 0.855.
 The cost is 776 ms per query at depth 20 and 1,940 ms at depth 50 on the
 machine in Table 7, against 1.5 ms for the hybrid first stage.
 
