@@ -1,0 +1,536 @@
+{
+  "corpus": "Companies Act 2006, legislation.gov.uk data.xml, text valid from 2026-07-16, dc:modified 2026-07-24",
+  "written": "2026-10-25",
+  "method": "Hand-written before any chunker existed. Labels checked against the live text of each cited provision in the raw XML, never against retrieval output. See eval/README.md for the relevance rule.",
+  "grades": {
+    "2": "The provision's text states the answer.",
+    "1": "Needed for a complete and correct answer: defines a term the answer depends on, states a condition or exception that changes the answer in an ordinary case, or is where the grade-2 provision explicitly sends the reader for the detail."
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "type": "single",
+      "question": "How many directors must a private company have?",
+      "relevant": [{ "id": "section-154", "grade": 2 }],
+      "notes": "At least one; a public company at least two."
+    },
+    {
+      "id": "q02",
+      "type": "single",
+      "question": "What is the minimum age for someone to be appointed as a company director?",
+      "relevant": [{ "id": "section-157", "grade": 2 }],
+      "notes": "16. Section 158 lets regulations create exceptions but does not change the ordinary answer, so it is not labelled."
+    },
+    {
+      "id": "q03",
+      "type": "single",
+      "question": "What is a director's duty to promote the success of the company, and what matters must they have regard to?",
+      "relevant": [{ "id": "section-172", "grade": 2 }],
+      "notes": "Act in good faith to promote success for members as a whole, having regard to long-term consequences, employees, suppliers and customers, community and environment, reputation, fairness between members."
+    },
+    {
+      "id": "q04",
+      "type": "single",
+      "question": "What majority is needed to pass a special resolution?",
+      "relevant": [{ "id": "section-283", "grade": 2 }],
+      "notes": "Not less than 75%."
+    },
+    {
+      "id": "q05",
+      "type": "single",
+      "question": "How much notice must a private company give to call a general meeting?",
+      "relevant": [{ "id": "section-307", "grade": 2 }],
+      "notes": "At least 14 days, unless members agree shorter notice."
+    },
+    {
+      "id": "q06",
+      "type": "single",
+      "question": "For how long must a private company keep its accounting records?",
+      "relevant": [{ "id": "section-388", "grade": 2 }],
+      "notes": "Three years from the date they are made; six for a public company."
+    },
+    {
+      "id": "q07",
+      "type": "single",
+      "question": "How long after its financial year end does a private company have to file its accounts with the registrar?",
+      "relevant": [{ "id": "section-442", "grade": 2 }],
+      "notes": "Nine months after the end of the accounting reference period; six months for a public company."
+    },
+    {
+      "id": "q08",
+      "type": "single",
+      "question": "What is the authorised minimum share capital for a public company?",
+      "relevant": [{ "id": "section-763", "grade": 2 }],
+      "notes": "£50,000 or the prescribed euro equivalent."
+    },
+    {
+      "id": "q09",
+      "type": "single",
+      "question": "Can a company allot shares at a discount to their nominal value?",
+      "relevant": [{ "id": "section-580", "grade": 2 }],
+      "notes": "No; the allottee is liable to pay the discount with interest."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "question": "What is a shadow director?",
+      "relevant": [{ "id": "section-251", "grade": 2 }],
+      "notes": "A person in accordance with whose directions or instructions the directors are accustomed to act, excluding professional advisers."
+    },
+    {
+      "id": "q11",
+      "type": "single",
+      "question": "Does a private company have to appoint a company secretary?",
+      "relevant": [{ "id": "section-270", "grade": 2 }],
+      "notes": "No. Section 271 (public companies must) is about a different company type and is not labelled."
+    },
+    {
+      "id": "q12",
+      "type": "single",
+      "question": "Who is entitled to inspect a company's register of members, and can the company charge a fee?",
+      "relevant": [{ "id": "section-116", "grade": 2 }],
+      "notes": "Members free of charge; anyone else on payment of the prescribed fee."
+    },
+    {
+      "id": "q13",
+      "type": "single",
+      "question": "Within how many days must particulars of a charge created by a company be delivered to the registrar?",
+      "relevant": [{ "id": "section-859A", "grade": 2 }],
+      "notes": "21 days beginning with the day after creation."
+    },
+    {
+      "id": "q14",
+      "type": "single",
+      "question": "What must the directors of a public company do if its net assets fall to half or less of its called-up share capital?",
+      "relevant": [{ "id": "section-656", "grade": 2 }],
+      "notes": "Call a general meeting within 28 days of a director learning of it, to be held within 56 days."
+    },
+    {
+      "id": "q15",
+      "type": "single",
+      "question": "What happens to a charge if the company fails to deliver it for registration within the period allowed?",
+      "relevant": [{ "id": "section-859H", "grade": 2 }],
+      "notes": "Void against a liquidator, administrator and creditors; the secured money becomes immediately payable."
+    },
+    {
+      "id": "q16",
+      "type": "single",
+      "question": "What is the offence of fraudulent trading under the Companies Act?",
+      "relevant": [{ "id": "section-993", "grade": 2 }],
+      "notes": "Carrying on business with intent to defraud creditors or for any fraudulent purpose; every knowing party commits an offence."
+    },
+    {
+      "id": "q17",
+      "type": "single",
+      "question": "How far in advance must special notice of a resolution be given to the company?",
+      "relevant": [{ "id": "section-312", "grade": 2 }],
+      "notes": "At least 28 days before the meeting."
+    },
+    {
+      "id": "q18",
+      "type": "single",
+      "question": "What turnover, balance sheet and employee thresholds does a company have to meet to qualify as small?",
+      "relevant": [{ "id": "section-382", "grade": 2 }],
+      "notes": "Two of: turnover not more than £15 million, balance sheet total not more than £7.5 million, not more than 50 employees. The figures are in a table inside the section."
+    },
+    {
+      "id": "q19",
+      "type": "single",
+      "question": "What proportion of members can force a company that is exempt from audit to have its accounts audited anyway?",
+      "relevant": [{ "id": "section-476", "grade": 2 }],
+      "notes": "Members holding not less than 10% in nominal value of issued share capital, or 10% in number if no share capital."
+    },
+    {
+      "id": "q20",
+      "type": "single",
+      "question": "Can a court excuse a director from liability for a breach of duty if the director acted honestly and reasonably?",
+      "relevant": [{ "id": "section-1157", "grade": 2 }],
+      "notes": "Yes, wholly or in part, if they acted honestly and reasonably and ought fairly to be excused."
+    },
+    {
+      "id": "q21",
+      "type": "single",
+      "question": "How long does a former director have to apply to the registrar for administrative restoration of a struck-off company?",
+      "relevant": [{ "id": "section-1024", "grade": 2 }],
+      "notes": "Six years from dissolution."
+    },
+    {
+      "id": "q22",
+      "type": "single",
+      "question": "How long after allotting shares must a company have the share certificates ready for delivery?",
+      "relevant": [{ "id": "section-769", "grade": 2 }],
+      "notes": "Two months."
+    },
+    {
+      "id": "q23",
+      "type": "single",
+      "question": "What must the name of a public limited company end with?",
+      "relevant": [{ "id": "section-58", "grade": 2 }],
+      "notes": "'public limited company' or 'p.l.c.', or the Welsh equivalents for a Welsh company."
+    },
+    {
+      "id": "q24",
+      "type": "single",
+      "question": "Can a person who is disqualified under the directors disqualification legislation be appointed as a director?",
+      "relevant": [{ "id": "section-159A", "grade": 2 }],
+      "notes": "No. Inserted by the Economic Crime and Corporate Transparency Act 2023."
+    },
+    {
+      "id": "q25",
+      "type": "single",
+      "question": "For how long must a company keep the minutes of its directors' meetings?",
+      "relevant": [{ "id": "section-248", "grade": 2 }],
+      "notes": "At least ten years from the date of the meeting."
+    },
+    {
+      "id": "q26",
+      "type": "single",
+      "question": "Does a private company have to hold an annual general meeting?",
+      "relevant": [{ "id": "section-336", "grade": 2 }],
+      "notes": "The Act only requires public companies and traded companies to hold one, so a private company that is not traded does not. The answer is by absence, and section 336 is the only provision from which a reader can infer it."
+    },
+    {
+      "id": "q27",
+      "type": "single",
+      "question": "Which companies must prepare a strategic report?",
+      "relevant": [{ "id": "section-414A", "grade": 2 }],
+      "notes": "All companies except those entitled to the small companies exemption."
+    },
+    {
+      "id": "q28",
+      "type": "single",
+      "question": "Who can object to a company's registered name on the ground that it is too similar to a name in which they have goodwill?",
+      "relevant": [{ "id": "section-69", "grade": 2 }],
+      "notes": "Any person with goodwill in the name may object to the company names adjudicator."
+    },
+    {
+      "id": "q29",
+      "type": "multi",
+      "question": "How can a private company reduce its share capital without applying to the court?",
+      "relevant": [
+        { "id": "section-641", "grade": 2 },
+        { "id": "section-642", "grade": 2 },
+        { "id": "section-643", "grade": 1 },
+        { "id": "section-644", "grade": 1 }
+      ],
+      "notes": "Special resolution supported by a solvency statement (641(1)(a)); 642 defines 'supported by', 643 the statement's content, 644 registration within 15 days. 641 cross-references 642 to 644 by number."
+    },
+    {
+      "id": "q30",
+      "type": "multi",
+      "question": "How can the members remove a director before the end of their term, and what rights does the director have to object?",
+      "relevant": [
+        { "id": "section-168", "grade": 2 },
+        { "id": "section-169", "grade": 2 },
+        { "id": "section-312", "grade": 1 }
+      ],
+      "notes": "Ordinary resolution at a meeting with special notice (168); director entitled to be heard and to circulate representations (169); special notice means 28 days (312)."
+    },
+    {
+      "id": "q31",
+      "type": "multi",
+      "question": "When is a small company exempt from having its accounts audited, and which companies cannot use that exemption?",
+      "relevant": [
+        { "id": "section-477", "grade": 2 },
+        { "id": "section-478", "grade": 2 },
+        { "id": "section-479", "grade": 1 },
+        { "id": "section-382", "grade": 1 }
+      ],
+      "notes": "477 grants the exemption and sends the reader to 382 for what 'small' means; 478 lists excluded companies; 479 adds the group-company condition."
+    },
+    {
+      "id": "q32",
+      "type": "multi",
+      "question": "Which transactions between a company and its directors require approval by the members?",
+      "relevant": [
+        { "id": "section-188", "grade": 2 },
+        { "id": "section-190", "grade": 2 },
+        { "id": "section-197", "grade": 2 },
+        { "id": "section-217", "grade": 2 },
+        { "id": "section-198", "grade": 1 },
+        { "id": "section-200", "grade": 1 },
+        { "id": "section-201", "grade": 1 }
+      ],
+      "notes": "Long-term service contracts, substantial property transactions, loans, payments for loss of office. Quasi-loans, connected-person loans and credit transactions (198, 200, 201) apply only to public companies and their associates."
+    },
+    {
+      "id": "q33",
+      "type": "multi",
+      "question": "Can a company indemnify its directors against liability, or buy insurance for them?",
+      "relevant": [
+        { "id": "section-232", "grade": 2 },
+        { "id": "section-233", "grade": 2 },
+        { "id": "section-234", "grade": 2 }
+      ],
+      "notes": "Exemptions and indemnities are void (232) except insurance (233) and qualifying third party indemnity provision (234). Pension scheme indemnity (235) is a niche case and is not labelled."
+    },
+    {
+      "id": "q34",
+      "type": "multi",
+      "question": "How does a member bring a derivative claim on behalf of the company, and when must the court refuse permission?",
+      "relevant": [
+        { "id": "section-260", "grade": 2 },
+        { "id": "section-261", "grade": 2 },
+        { "id": "section-263", "grade": 2 }
+      ],
+      "notes": "Definition and grounds (260), application for permission with prima facie stage (261), mandatory refusal if a section 172 director would not continue or the act was authorised or ratified (263)."
+    },
+    {
+      "id": "q35",
+      "type": "multi",
+      "question": "What can a shareholder do if the company's affairs are being conducted in a way that is unfairly prejudicial to them, and what orders can the court make?",
+      "relevant": [
+        { "id": "section-994", "grade": 2 },
+        { "id": "section-996", "grade": 2 }
+      ],
+      "notes": "Petition under 994; court's powers including regulating conduct and ordering a share purchase under 996."
+    },
+    {
+      "id": "q36",
+      "type": "multi",
+      "question": "How does a company change its articles of association, and what must it send to the registrar afterwards?",
+      "relevant": [
+        { "id": "section-21", "grade": 2 },
+        { "id": "section-26", "grade": 2 },
+        { "id": "section-22", "grade": 1 },
+        { "id": "section-30", "grade": 1 }
+      ],
+      "notes": "Special resolution (21), copy of amended articles within 15 days (26), entrenchment can make it harder (22), copy of the resolution itself within 15 days (30)."
+    },
+    {
+      "id": "q37",
+      "type": "multi",
+      "question": "How does a company apply to be struck off the register voluntarily, and when is it not allowed to apply?",
+      "relevant": [
+        { "id": "section-1003", "grade": 2 },
+        { "id": "section-1004", "grade": 2 },
+        { "id": "section-1005", "grade": 2 }
+      ],
+      "notes": "Application by the directors or a majority, two months' Gazette notice (1003); not within three months of trading, changing name etc (1004); not while insolvency or scheme proceedings are pending (1005)."
+    },
+    {
+      "id": "q38",
+      "type": "multi",
+      "question": "How can a dissolved company be restored to the register, and what are the time limits?",
+      "relevant": [
+        { "id": "section-1024", "grade": 2 },
+        { "id": "section-1029", "grade": 2 },
+        { "id": "section-1030", "grade": 2 },
+        { "id": "section-1025", "grade": 1 }
+      ],
+      "notes": "Administrative route within six years by a former director or member (1024, conditions in 1025); court route (1029) generally within six years, no limit for personal injury claims (1030)."
+    },
+    {
+      "id": "q39",
+      "type": "multi",
+      "question": "Who counts as a person with significant control over a company?",
+      "relevant": [
+        { "id": "section-790C", "grade": 2 },
+        { "id": "schedule-1A-paragraph-2", "grade": 2 },
+        { "id": "schedule-1A-paragraph-3", "grade": 2 },
+        { "id": "schedule-1A-paragraph-4", "grade": 2 },
+        { "id": "schedule-1A-paragraph-5", "grade": 2 },
+        { "id": "schedule-1A-paragraph-6", "grade": 1 }
+      ],
+      "notes": "790C says an individual meeting a specified condition in Part 1 of Schedule 1A; the five conditions are paragraphs 2 to 6 of that Schedule (over 25% of shares, over 25% of votes, right to appoint a majority of the board, significant influence or control, and the same via a trust or firm)."
+    },
+    {
+      "id": "q40",
+      "type": "multi",
+      "question": "When is one company a subsidiary of another?",
+      "relevant": [
+        { "id": "section-1159", "grade": 2 },
+        { "id": "schedule-6-paragraph-2", "grade": 1 },
+        { "id": "schedule-6-paragraph-3", "grade": 1 }
+      ],
+      "notes": "Majority of voting rights, right to appoint or remove a majority of the board, or control of a majority of votes by agreement (1159). 1159 points to Schedule 6 for what voting rights and the board-appointment right mean. 1162 (parent and subsidiary undertakings) answers a different question and is not labelled."
+    },
+    {
+      "id": "q41",
+      "type": "multi",
+      "question": "How do the members of a private company pass a written resolution, and how long do they have to agree to it?",
+      "relevant": [
+        { "id": "section-288", "grade": 2 },
+        { "id": "section-296", "grade": 2 },
+        { "id": "section-297", "grade": 2 },
+        { "id": "section-291", "grade": 1 },
+        { "id": "section-292", "grade": 1 }
+      ],
+      "notes": "Definition and exclusions (288), signifying agreement by authenticated document (296), lapses after 28 days unless the articles say otherwise (297); circulation by directors (291) or on members' requisition (292)."
+    },
+    {
+      "id": "q42",
+      "type": "multi",
+      "question": "What proportion of members can require the directors to call a general meeting, and what can the members do if the directors ignore them?",
+      "relevant": [
+        { "id": "section-303", "grade": 2 },
+        { "id": "section-304", "grade": 2 },
+        { "id": "section-305", "grade": 2 }
+      ],
+      "notes": "5% of paid-up voting capital (303); directors must call within 21 days for a meeting within 28 days (304); otherwise members may call it at the company's expense (305)."
+    },
+    {
+      "id": "q43",
+      "type": "multi",
+      "question": "When may directors allot shares without specific authorisation from the members?",
+      "relevant": [
+        { "id": "section-549", "grade": 2 },
+        { "id": "section-550", "grade": 2 },
+        { "id": "section-551", "grade": 2 }
+      ],
+      "notes": "General prohibition (549); private company with a single class of shares may allot unless the articles prohibit (550); otherwise authorisation by articles or resolution, up to five years (551)."
+    },
+    {
+      "id": "q44",
+      "type": "multi",
+      "question": "When must a company offer new shares to its existing shareholders first, and how can a private company exclude or disapply that right?",
+      "relevant": [
+        { "id": "section-561", "grade": 2 },
+        { "id": "section-567", "grade": 2 },
+        { "id": "section-569", "grade": 2 },
+        { "id": "section-570", "grade": 2 },
+        { "id": "section-565", "grade": 1 }
+      ],
+      "notes": "Pre-emption on allotment of equity securities for cash (561); not for non-cash consideration (565); private company may exclude by articles (567); single-class private company may disapply by articles or special resolution (569); general disapplication under a section 551 authority (570)."
+    },
+    {
+      "id": "q45",
+      "type": "multi",
+      "question": "Out of what may a company pay a dividend, and what further restriction applies to a public company?",
+      "relevant": [
+        { "id": "section-830", "grade": 2 },
+        { "id": "section-831", "grade": 2 },
+        { "id": "section-829", "grade": 1 },
+        { "id": "section-836", "grade": 1 }
+      ],
+      "notes": "Accumulated realised profits less accumulated realised losses (830); public company net assets test (831); 'distribution' defined in 829; determined by reference to the relevant accounts (836)."
+    },
+    {
+      "id": "q46",
+      "type": "multi",
+      "question": "What must a newly formed public company do before it can start trading, and what happens if it trades without doing so?",
+      "relevant": [
+        { "id": "section-761", "grade": 2 },
+        { "id": "section-767", "grade": 2 },
+        { "id": "section-762", "grade": 1 },
+        { "id": "section-763", "grade": 1 }
+      ],
+      "notes": "Obtain a trading certificate showing allotted capital at or above the authorised minimum (761, procedure in 762, minimum in 763); trading without one is an offence by the company and officers in default but contracts remain valid (767)."
+    },
+    {
+      "id": "q47",
+      "type": "multi",
+      "question": "What documents and statements must be delivered to the registrar to form a new company?",
+      "relevant": [
+        { "id": "section-9", "grade": 2 },
+        { "id": "section-8", "grade": 1 },
+        { "id": "section-10", "grade": 1 },
+        { "id": "section-12", "grade": 1 },
+        { "id": "section-12A", "grade": 1 },
+        { "id": "section-13", "grade": 1 }
+      ],
+      "notes": "Memorandum, application for registration, statement of capital or guarantee, statement of proposed officers, statement of initial significant control, statement of compliance (9), with the content of each in 8, 10, 12, 12A and 13."
+    },
+    {
+      "id": "q48",
+      "type": "multi",
+      "question": "What is the procedure for the members to remove the company's auditor before the end of their term of office?",
+      "relevant": [
+        { "id": "section-510", "grade": 2 },
+        { "id": "section-511", "grade": 2 },
+        { "id": "section-312", "grade": 1 }
+      ],
+      "notes": "Ordinary resolution at a meeting with special notice (510); copy to the auditor who may make representations (511); special notice is 28 days (312)."
+    },
+    {
+      "id": "q49",
+      "type": "multi",
+      "question": "Does a director have to declare an interest in a transaction with the company, and does it matter whether the transaction has already been entered into?",
+      "relevant": [
+        { "id": "section-177", "grade": 2 },
+        { "id": "section-182", "grade": 2 }
+      ],
+      "notes": "Proposed transactions under 177 (a general duty); existing transactions under 182 (a separate, criminal-backed duty)."
+    },
+    {
+      "id": "q50",
+      "type": "multi",
+      "question": "How does a company change the address of its registered office, and when does the change take effect?",
+      "relevant": [
+        { "id": "section-87", "grade": 2 },
+        { "id": "section-86", "grade": 1 }
+      ],
+      "notes": "Notice to the registrar, effective on registration with a 14-day grace period for documents served at the old address (87); the new address must be an 'appropriate address' as defined in 86."
+    },
+    {
+      "id": "u01",
+      "type": "unanswerable",
+      "question": "What is the penalty for wrongful trading?",
+      "relevant": [],
+      "notes": "Insolvency Act 1986 section 214. The Companies Act mentions wrongful trading once in passing (1170B) and has a fraudulent trading offence (993), which is a different thing."
+    },
+    {
+      "id": "u02",
+      "type": "unanswerable",
+      "question": "For how many years can a court disqualify a director for unfit conduct?",
+      "relevant": [],
+      "notes": "Company Directors Disqualification Act 1986. Part 40 of this Act is about foreign restrictions and section 159A about appointing someone already disqualified; neither sets the period."
+    },
+    {
+      "id": "u03",
+      "type": "unanswerable",
+      "question": "What rate of corporation tax does a small company pay?",
+      "relevant": [],
+      "notes": "Corporation Tax Acts. The Act mentions the Corporation Tax Act 2010 only to borrow definitions."
+    },
+    {
+      "id": "u04",
+      "type": "unanswerable",
+      "question": "How is a limited liability partnership incorporated?",
+      "relevant": [],
+      "notes": "Limited Liability Partnerships Act 2000. This Act mentions LLPs only in definitions and fee provisions."
+    },
+    {
+      "id": "u05",
+      "type": "unanswerable",
+      "question": "How does a company register a trade mark for its name?",
+      "relevant": [],
+      "notes": "Trade Marks Act 1994. Section 69 (objection to a company name) is the nearest distractor."
+    },
+    {
+      "id": "u06",
+      "type": "unanswerable",
+      "question": "Does a company have to pay its employees the national minimum wage?",
+      "relevant": [],
+      "notes": "National Minimum Wage Act 1998. The phrase does not appear in this Act."
+    },
+    {
+      "id": "u07",
+      "type": "unanswerable",
+      "question": "Who can be appointed as the administrator of an insolvent company?",
+      "relevant": [],
+      "notes": "Insolvency Act 1986 Schedule B1. This Act refers to administrators only as persons against whom unregistered charges are void."
+    },
+    {
+      "id": "u08",
+      "type": "unanswerable",
+      "question": "What particulars must a company record in the register of directors that it keeps at its registered office?",
+      "relevant": [],
+      "notes": "Formerly sections 162 to 167. In the current text they are repealed shells; companies now notify the registrar under 167G and following. There is no live provision describing a company-kept register of directors, so a system that returns 162 or 167G as the answer is wrong."
+    },
+    {
+      "id": "u09",
+      "type": "unanswerable",
+      "question": "Is stamp duty payable on a transfer of shares?",
+      "relevant": [],
+      "notes": "Stamp Act 1891 and Finance Acts. Section 133 mentions a stamp duty exemption for overseas branch registers, which is not the answer."
+    },
+    {
+      "id": "u10",
+      "type": "unanswerable",
+      "question": "How much notice must an employer give an employee who is being made redundant?",
+      "relevant": [],
+      "notes": "Employment Rights Act 1996. The word 'redundancy' appears once in this Act, in the takeover provisions."
+    }
+  ]
+}
