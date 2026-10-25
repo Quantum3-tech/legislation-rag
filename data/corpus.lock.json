@@ -1,0 +1,11 @@
+{
+  "name": "Companies Act 2006, current consolidated text (CLML XML)",
+  "url": "https://www.legislation.gov.uk/ukpga/2006/46/data.xml",
+  "path": "data/raw/ukpga-2006-46.xml",
+  "sha256": "d28adc39e0ec88421b5da68a1de3a36f79167833753708c5f8486e4821eefb04",
+  "bytes": 15193495,
+  "fetchedAt": "2026-10-25",
+  "textValidFrom": "2026-07-16",
+  "dcModified": "2026-07-24",
+  "note": "Every number in this repo was measured against the file with this hash. legislation.gov.uk serves the current consolidated text, so a later fetch may differ; if the hash does not match, the numbers in README.md are not about the file you have."
+}

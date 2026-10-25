@@ -4,3 +4,4 @@ data/models/
 .cache/
 *.log
 coverage/
+data/raw/

@@ -10,7 +10,8 @@
     "chunk": "tsx scripts/build-chunks.ts",
     "embed": "tsx scripts/embed.ts",
     "matrix": "tsx scripts/run-matrix.ts",
-    "report": "tsx scripts/report.ts"
+    "report": "tsx scripts/report.ts",
+    "fetch": "tsx scripts/fetch-corpus.ts"
   },
   "keywords": [],
   "author": "",

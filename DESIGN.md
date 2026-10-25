@@ -250,6 +250,11 @@ the Act was modified on 2026-07-24; a re-fetch in a year would give a
 different corpus and every number in the repo would become unreproducible.
 Fifteen megabytes is the price of being able to check the numbers.
 
+Superseded after the run by DECISIONS.md D16: the file is fetched and
+verified against a committed SHA256 instead, because its identifiers
+trip GitHub's secret scanning 223 times. The design text above is left
+as written.
+
 ## 14. The contract I propose to seal
 
 To be placed in `src/contract/` once this design is approved and not

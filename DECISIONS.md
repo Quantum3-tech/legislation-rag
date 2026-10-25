@@ -141,3 +141,35 @@ dominate a window. The README states the mechanism and the number. The
 alternative credit rule (every provision a window touches) is listed as
 future work rather than run, because it would change the metric for one
 chunker only and the comparison would stop being like for like.
+
+## D16. The raw corpus is fetched and hash-checked, not committed (25 October 2026, reverses D1)
+
+Decided: `data/raw/` is ignored. `data/corpus.lock.json` records the
+source URL, the SHA256 (`d28adc39...efb04`), the size (15,193,495 bytes),
+the fetch date (25 October 2026) and the text-valid-from date (16 July
+2026). `npm run fetch` downloads the file and exits non-zero with an
+explanation if the hash does not match. The file was removed from every
+commit before anything was pushed.
+
+Why D1 was reversed: GitHub push protection blocked the first push with
+223 secret detections, all false positives. legislation.gov.uk marks
+every amendment effect with an identifier of the form `key-<32 hex
+digits>`, and that is also the shape of a Mailgun API key. Unblocking 223
+detections one by one is not viable and disabling push protection on the
+repository is not acceptable, so the file cannot go through the remote.
+
+What the trade is: D1 bought offline reproducibility, in that a clone had
+everything the numbers were measured against. D16 trades that for a
+network dependency on legislation.gov.uk, which serves the current
+consolidation and will at some point serve a different file. The hash is
+what keeps the numbers checkable: a reader who fetches and gets a match
+has the exact bytes; a reader who gets a mismatch knows before running
+anything that the tables do not describe their file. When I re-fetched
+the file an hour after the original download to restore my local copy,
+the hash matched, which is the first use of the check.
+
+Rejected: committing a transformed copy with the identifiers stripped (the
+raw file is the source of truth and a transformed copy is not the thing
+the parser was written against), and committing `data/corpus.json`, the
+parsed output, in its place (it is derived, 4 MB, and would invite
+treating the parser as untestable).

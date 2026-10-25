@@ -344,8 +344,11 @@ measurable difference" rather than naming a winner.
 ## Corpus
 
 The current consolidated text of the Act from legislation.gov.uk, valid
-from 16 July 2026, committed as `data/raw/ukpga-2006-46.xml` so the
-measurements are tied to a fixed corpus. 1,552 live sections and 407 live
+from 16 July 2026, fetched on 25 October 2026. The file itself is not
+committed; `data/corpus.lock.json` holds its URL, SHA256 and size, and
+`npm run fetch` refuses any download that does not match, so the
+measurements stay tied to one exact set of bytes (see DECISIONS.md D16
+for why it is not simply committed). 1,552 live sections and 407 live
 schedule paragraphs; 134 repealed shells and 27 quoted sections of other
 Acts are excluded. `docs/corpus-report.md` records the structure, the
 length distribution, the fact that cross-references are plain text in the
@@ -353,8 +356,16 @@ XML, and the traps in the markup.
 
 ## Reproducing the numbers
 
+The raw corpus is not in the repo. `npm run fetch` downloads it from
+legislation.gov.uk and verifies it against the SHA256 in
+`data/corpus.lock.json`; if the bytes differ, because a newer
+consolidation has been published, the script exits non-zero and says so,
+and the numbers in this file are not about the file you have. Every other
+step, including the tests, needs the corpus on disk first.
+
 ```
 npm install
+npm run fetch     # download data/raw/ukpga-2006-46.xml and check its hash
 npm run parse     # XML -> data/corpus.json, prints the counts
 npm run chunk     # six chunkers -> data/index/<chunker>/chunks.json + bm25.json
 npm run embed     # bge-small embeddings, cached under data/index/
