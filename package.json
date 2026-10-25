@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "parse": "tsx scripts/parse-corpus.ts",
+    "chunk": "tsx scripts/build-chunks.ts",
+    "embed": "tsx scripts/embed.ts",
+    "matrix": "tsx scripts/run-matrix.ts",
+    "report": "tsx scripts/report.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@huggingface/transformers": "^3.7.5"
+    "@huggingface/transformers": "^3.7.5",
+    "@xmldom/xmldom": "^0.9.8"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

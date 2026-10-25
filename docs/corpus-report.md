@@ -82,14 +82,18 @@ them is numbered "13", colliding with the real section 13. That leaves
 suffix from later insertion (`9A`, `113A` to `113I`, `790ZG` and so on).
 One `Pnumber` is "159." with a trailing full stop.
 
-Of the 1,650 sections, 99 are repealed shells: 96 contain only a row of
-dots and 3 contain nothing but text inside `Repeal` elements. The 20
+Of the 1,650 sections, 98 are repealed shells: 96 contain only a row of
+dots and 2 contain nothing but text inside `Repeal` elements. The 20
 Schedules hold 443 paragraphs, 36 of which are repealed shells. Schedule 8
 (index of defined expressions) and Schedule 16 (repeals) contain no
 paragraphs at all, only tables.
 
-The live corpus is therefore 1,551 body sections and 407 schedule
-paragraphs.
+The live corpus is therefore 1,552 body sections and 407 schedule
+paragraphs. The first draft of this report said 1,551 and 99: my
+exploratory script read only the first `P1para` child of each section,
+and section 444 keeps its repealed text in one `P1para` and its live
+substituted text in a second. The TypeScript loader reads all of them and
+its counts are the ones here (see DECISIONS.md D5).
 
 ## Section lengths in tokens
 
@@ -107,6 +111,12 @@ tokens included.
 | Under 64 tokens | 115 |
 | Over 256 tokens | 625 |
 | Over 512 tokens | 109 |
+
+These rows come from the exploratory pass and exclude section 444 (see
+above). The chunk builder's figures for the whole-section chunker, which
+renders subsection numbers as "(1)" and so runs a little longer, are in
+`results/chunkers.json`: 1,959 chunks, median 202 tokens, 90th percentile
+472, maximum 2,185, with 144 chunks over the 512-token window.
 
 Total live text is 399,269 tokens in the body and 41,468 in the schedules.
 The longest section is 1266 (Transparency rules) at 2,091 tokens; the next
@@ -181,6 +191,11 @@ sections, quote text that this Act inserts into other legislation. The
 quoted text has its own `P1`, `P2` and `Pnumber` elements with no `id`. It
 has to be kept as part of the amending section's text but never treated as
 a provision of this Act.
+
+**Two bodies in one section.** Ten sections have two `P1para` children:
+the first holds the old text wholly inside `Repeal`, the second the
+substituted text. Reading only the first makes a live section (444) look
+repealed. Read all of them.
 
 **Empty marker elements.** 3,906 `CommentaryRef` elements, mostly inside
 `Pnumber` and `Text`, with no text content. Harmless if dropped, a stray

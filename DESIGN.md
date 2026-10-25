@@ -60,37 +60,48 @@ If the matrix runs quickly enough I will add D at 512 tokens as a sixth
 row, because comparing D-256 with D-512 says whether window size or
 boundary-blindness is what hurts.
 
-Prediction, and the reasoning I will be held to:
+### Predictions, fixed before any run
 
-1. **E wins on nDCG@10 under hybrid retrieval, with A within 0.02.** The
-   labels are at section granularity, so chunks at section granularity are
-   aligned with the target. E differs from A only for the 109 long
-   sections, where A's embedding is truncated. Those sections are
-   over-represented in the question set relative to the corpus (1266,
-   1087, 790C, 159A and 9 are all long), so E should edge A.
-2. **B finishes last for dense and hybrid, and a long way last for
-   dense.** 539 occurrences of "this Part" and "this Chapter" and 1,193 of
-   "subsection (N)" lose their referent when a subsection is cut out, and
-   the heading, which carries most of the semantic signal in legislation,
-   is gone. C recovers most of the gap, which is the point of running
-   both.
-3. **D sits mid-table**, above B because 256 tokens usually spans a whole
-   short section with its heading, below A because 39% of windows will
-   straddle two provisions and be credited to only one.
-4. **BM25 alone beats dense alone on this question set.** The questions
-   use the Act's own vocabulary ("special resolution", "solvency
-   statement", "pre-emption"), which is exactly where lexical matching is
-   strong and a 33M-parameter embedder is not. Hybrid beats BM25 alone by
-   under 0.05 nDCG@10, with the gain concentrated in the multi-section
-   questions.
-5. **Reranking raises MRR@10 and nDCG@10 by a few points at depth 20, and
-   depth 50 adds little over depth 20.** Reranking cannot raise recall@k
-   above what the candidate set already contains, so recall@10 moves less
-   than MRR. I half expect the small MS MARCO cross-encoder to hurt on
-   bare subsection chunks (B), because it has never seen legal text and
-   the chunks lack the context it would need.
+Every prediction names the metric, the question count, the retriever and
+the reranking depth, so none can be reinterpreted after the numbers land.
+"nDCG@10" always means graded nDCG@10 over the 50 answerable questions at
+provision level. Each is marked held or broken in the README with the
+numbers beside it.
 
-If 4 goes the other way, that is the most useful result in the repo and
+1. **Chunker order.** With RRF hybrid retrieval and no reranking, the
+   chunkers rank by nDCG@10 as E (section-split) first, A (section)
+   second, D (fixed-256) third, C (subsection-context) fourth, B
+   (subsection) last, and E minus A is at most 0.02. Reasoning: labels are
+   at section granularity, so section-sized chunks are aligned with the
+   target; E differs from A only on the 109 long sections, and those are
+   over-represented in the question set (1266, 1087, 790C, 159A and 9 are
+   all long).
+2. **Bare subsections lose context.** With dense-only retrieval and no
+   reranking, B's nDCG@10 is at least 0.10 below C's. 539 uses of "this
+   Part" and "this Chapter" and 1,193 of "subsection (N)" lose their
+   referent when the subsection is cut out, and the heading is gone.
+3. **BM25 beats dense here.** On chunker A with no reranking, BM25's
+   nDCG@10 exceeds dense's nDCG@10. RRF hybrid's nDCG@10 exceeds BM25's by
+   more than 0 and less than 0.05, and the hybrid gain on the 22 multi
+   questions is larger than on the 28 single questions. Reasoning: the
+   questions use the Act's own vocabulary, which is where lexical
+   matching is strong and a 33M-parameter embedder is not.
+4. **Reranking moves the top, not the set.** On chunker A with RRF hybrid,
+   reranking the top 20 raises MRR@10 by at least 0.03 and nDCG@10 by at
+   least 0.02 over no reranking; the absolute change in recall@10 is
+   smaller than the absolute change in MRR@10; and reranking the top 50
+   changes nDCG@10 by less than 0.01 in either direction compared with
+   reranking the top 20.
+5. **Token cost.** At k=10 with RRF hybrid and no reranking, the median
+   retrieved token volume of B is less than a quarter of A's.
+6. **Abstention.** On chunker A with RRF hybrid and no reranking, the top-1
+   fused score has an AUC below 0.75 at separating the 50 answerable from
+   the 10 unanswerable questions, because RRF scores are rank-based and
+   barely vary between queries. With reranking at depth 20 on the same
+   configuration, the top-1 cross-encoder score has an AUC of at least
+   0.75.
+
+If 3 goes the other way, that is the most useful result in the repo and
 the README will lead with it.
 
 ## 4. What the embedding sees
@@ -174,17 +185,39 @@ reported beside it in every table. Breakdowns by question type (single,
 multi) are reported, because I expect hybrid and reranking to help the
 multi questions and do little for the single ones.
 
-For the 10 unanswerable questions the three metrics are undefined. Instead
-I report, per configuration, the top-1 score for answerable versus
-unanswerable questions and the accuracy of the best single threshold at
-telling them apart. With 10 examples this is indicative, and the README
-will say so.
+**Retrieved token volume.** Collapsing to provisions makes a chunker that
+finds the provision inside a 2,091-token section and one that finds it
+inside a 120-token subsection look identical on recall. So every
+configuration also reports the tokens a reader would have to take in to
+see k distinct provisions: the sum of the token counts of the ranked
+chunks, from the top, up to and including the chunk at which the k-th
+distinct provision first appears, duplicates of an already-seen provision
+included because the reader still reads them. Median and 90th percentile
+over the 50 answerable questions, at k=5 and k=10. A chunker that wins
+nDCG@10 by 0.01 while returning four times the tokens has not won, and the
+README tables show both columns side by side.
+
+**Abstention.** For the 10 unanswerable questions the three quality
+metrics are undefined, so they are not in n=50. What those questions
+measure instead: for each configuration I record the top-1 score and the
+mean of the top-5 scores for every question, answerable and unanswerable,
+and report the median of each group, the AUC of the score at separating
+the two groups (the probability that a random answerable question scores
+above a random unanswerable one), and the balanced accuracy of the best
+single threshold. AUC near 0.5 means the retriever cannot tell it has
+nothing, and that is a finding for the README. With 10 unanswerable
+questions the AUC has a wide interval and the README says so.
+
+**Denominators.** Every table states its n. Quality metrics and token
+volumes use n=50 (answerable). Abstention uses n=50 against n=10. Any
+breakdown by type uses n=28 (single) or n=22 (multi). The report script
+prints the n into every table caption so none can be omitted by hand.
 
 Sixty questions cannot separate configurations that differ by a little.
 Every comparison against the baseline reports paired per-question wins and
-losses and a bootstrap 95% interval (1,000 resamples over questions) for
-the difference in nDCG@10. If the interval includes zero, the table says
-"no measurable difference", not "worse" or "better".
+losses and a bootstrap 95% interval (1,000 resamples over the 50
+questions) for the difference in nDCG@10. If the interval includes zero,
+the table says "no measurable difference", not "worse" or "better".
 
 ## 10. The baseline
 
@@ -260,18 +293,34 @@ interface Query {
 // metrics.ts
 interface RunResult {
   config: { chunker: string; retriever: string; fusion?: string; rerank?: { model: string; depth: number } };
-  n: number;                                   // answerable questions scored
+  n: number;                                   // answerable questions scored (50)
   recall: { 5: number; 10: number; 20: number };
   mrr10: number;
   ndcg10: number;
-  byType: Record<"single" | "multi", { recall10: number; mrr10: number; ndcg10: number }>;
-  perQuestion: { id: string; recall10: number; rr10: number; ndcg10: number; top1Score: number }[];
-  abstention: { answerableTop1: number[]; unanswerableTop1: number[]; bestThresholdAccuracy: number };
+  tokens: { 5: { median: number; p90: number }; 10: { median: number; p90: number } };
+  byType: Record<"single" | "multi", { n: number; recall10: number; mrr10: number; ndcg10: number }>;
+  perQuestion: { id: string; type: string; recall10: number; rr10: number; ndcg10: number;
+                 tokens5: number; tokens10: number; top1Score: number; top5MeanScore: number }[];
+  abstention: { nAnswerable: number; nUnanswerable: number;
+                top1: { auc: number; balancedAccuracy: number; threshold: number;
+                        medianAnswerable: number; medianUnanswerable: number };
+                top5Mean: { auc: number; balancedAccuracy: number; threshold: number;
+                            medianAnswerable: number; medianUnanswerable: number } };
   latencyMs: { retrieveP50: number; rerankP50?: number };
   startedAt: string;
   machine: string;
 }
 ```
+
+## 16. Amendments on approval (25 October 2026)
+
+The design was approved with four changes, all folded in above: the
+unanswerable questions now have a metric (abstention AUC and balanced
+accuracy on top-1 and top-5 scores); every configuration reports retrieved
+token volume at k=5 and k=10; every table carries its n; and the
+predictions were rewritten to name metric, n, retriever and reranking
+depth. A check that no labelled provision is a repealed shell runs as a
+test, after the ECCTA 2023 repeals of 162 to 167 and 790M.
 
 ## 15. What this design does not do, and what I would change with more time
 
