@@ -1,0 +1,6 @@
+node_modules/
+data/index/
+data/models/
+.cache/
+*.log
+coverage/
